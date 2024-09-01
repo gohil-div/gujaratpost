@@ -1,10 +1,10 @@
 import mysql from 'mysql2';
 
 const dbConfig = {
-  host: 'mysql.us.cloudlogin.co',
-  user: 'gujaratpost_newsgujrati',
-  password: 'Gujarat_Gane^sh@8813#',
-  database: 'gujaratpost_newsgujrati',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 };
 // const dbConfig = {
 //   host: '34.121.223.81',
