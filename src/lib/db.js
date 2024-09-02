@@ -6,13 +6,14 @@ const dbConfig = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 };
-// const dbConfig = {
-//   host: '34.121.223.81',
-//   user: 'testuser',
-//   password: 'test@123',
-//   database: 'gujaratpost_newsgujrati',
-// };
 
 const pool = mysql.createPool(dbConfig).promise();
-
+pool.getConnection()
+  .then(connection => {
+    console.log('Connected to the database');
+    connection.release();  // Release the connection back to the pool
+  })
+  .catch(err => {
+    console.error('Error connecting to the database:', err);
+  });
 export default pool;
