@@ -103,7 +103,7 @@ export default function HomeOneTwo() {
           </div>
         </section>
         <FeatureNewsCarousel customClass="pb-40" />
-        <div className="post__gallery__area">
+        {/* <div className="post__gallery__area">
           <div className="container">
             <div className="row">
               <div className="col-lg-8">
@@ -116,7 +116,7 @@ export default function HomeOneTwo() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <TwoPostCarousel />
         <section className="video-news-area ">
           <div className="container custom-container">
