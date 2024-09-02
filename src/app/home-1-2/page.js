@@ -29,6 +29,8 @@ import React, { useEffect, useState } from 'react';
 export default function HomeOneTwo() {
   const [drawer, drawerAction] = useToggle(false);
   const [newsData, setNewsData] = useState([]);
+  const [trendingNewsData, setTrendingNewsData] = useState([]);
+  const [mostViewed, setMostViewed] = useState([]);
 
   useEffect(() => {
     // Fetch the latest 10 news items from the API
@@ -45,10 +47,37 @@ export default function HomeOneTwo() {
         console.error('Error fetching news data:', error);
       }
     }
+    async function TrendingNewPostData() {
+      try {
+        const response = await fetch('/api/trendingNewPost'); // Fetch from your API
+        if (response.ok) {
+          const data = await response.json();
+          setTrendingNewsData(data); // Store the fetched data in state
+        } else {
+          console.error('Failed to fetch news data:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error fetching news data:', error);
+      }
+    }
+    async function MostViewedData() {
+      try {
+        const response = await fetch('/api/mostViewdNews'); // Fetch from your API
+        if (response.ok) {
+          const data = await response.json();
+          setMostViewed(data); // Store the fetched data in state
+        } else {
+          console.error('Failed to fetch news data:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error fetching news data:', error);
+      }
+    }
 
     fetchNews();
+    TrendingNewPostData();
+    MostViewedData()
   }, []);
-  console.log('newsData', newsData)
   return (
     <Layout>
       <div className="home-1-bg">
@@ -62,12 +91,12 @@ export default function HomeOneTwo() {
                   <h3 className="title">Trending News</h3>
                 </div>
                 <TrendingCarousel data={newsData}/>
-                <TrendingNewPost />
+                <TrendingNewPost data={trendingNewsData}/>
               </div>
               <div className="col-lg-4">
                 <div className="trending-right-sidebar">
                   <WidgetOne />
-                  <MostviewNews />
+                  <MostviewNews data={mostViewed}/>
                 </div>
               </div>
             </div>
