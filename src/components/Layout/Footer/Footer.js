@@ -11,7 +11,7 @@ export default function Footer({ dark }) {
             <div className="col-lg-7 col-md-5">
               <div className="footer-logo">
                 <Link href="/">
-                  <img src="/images/logo/logo-white.png" alt="" />
+                  <img src="/images/logo.jpg" alt="" />
                 </Link>
                 <ul>
                   <li>
@@ -213,8 +213,7 @@ export default function Footer({ dark }) {
                               our year-end Sale, Purchase a new license for your
                               next project…{' '}
                               <a href="#">
-                                @newspark #technology
-                                https://dribbble.com/subash_chandra
+                                @Gujaratpost #technology
                               </a>
                             </p>
                             <span>March 26, 2020</span>
@@ -230,7 +229,7 @@ export default function Footer({ dark }) {
                               our year-end Sale, Purchase a new license for your
                               next project…{' '}
                               <a href="#">
-                                @newspark #technology
+                              @Gujaratpost #technology
                                 https://dribbble.com/subash_chandra
                               </a>
                             </p>
@@ -252,7 +251,7 @@ export default function Footer({ dark }) {
                   <div className="col-lg-12 col-md-6">
                     <div className="widget wedget-service">
                       <div className="section-title section-title-2">
-                        <h3 className="title">Newspark news services</h3>
+                        <h3 className="title">Gujaratpost news services</h3>
                       </div>
                       <div className="service-item">
                         <ul>
@@ -271,7 +270,7 @@ export default function Footer({ dark }) {
                           <li>
                             <a href="#">
                               <i className="fal fa-envelope"></i> Contact
-                              Newspark news
+                              Gujaratpost news
                             </a>
                           </li>
                         </ul>
